@@ -18,8 +18,8 @@ import com.github.oldnpluslusteam.old40_game.light.Source;
 import com.github.oldnpluslusteam.old40_game.light.Surface;
 
 public class LineSurfaceComponent implements Surface, Component, RenderComponent {
-    private Vec2Property position;
-    private FloatProperty rotation;
+    protected Vec2Property position;
+    protected FloatProperty rotation;
 
     protected Vector2 point1, point2, abs1 = new Vector2(), abs2 = new Vector2();
     private Vector2 absfix0 = new Vector2(), absfix1 = new Vector2(), absfix2 = new Vector2();
@@ -73,7 +73,7 @@ public class LineSurfaceComponent implements Surface, Component, RenderComponent
     }
 
     @Override
-    public void receiveLight(Source source, Vector2 point1, Vector2 point2) {
+    public void receiveLight(Source source, Vector2 point1, Vector2 point2, LightingSystem system) {
 
     }
 

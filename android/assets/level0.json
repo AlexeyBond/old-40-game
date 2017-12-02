@@ -11,7 +11,7 @@
         }
       },
       "properties": {
-        "zoomFunction": ["fixed diagonal zoom function", "2000"],
+        "zoomFunction": ["fixed diagonal zoom function", "1300"],
         "position": ["0", "0"]
       }
     },
@@ -34,6 +34,14 @@
           "points": [-10, 10, -10, -10]
         }
       }
+    },
+    "mirrorSquare": {
+      "components": {
+        "line": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.MirrorLineSurfaceComponent$Decl",
+          "points": [-10, -10, 10, 10]
+        }
+      }
     }
   },
 
@@ -43,7 +51,7 @@
     },
 
     {
-      "inherit": ["blackSquare"],
+      "inherit": ["mirrorSquare"],
       "components": {
         "body": {
           "bodyType": "DynamicBody"

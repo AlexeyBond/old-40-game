@@ -1,6 +1,5 @@
 package com.github.oldnpluslusteam.old40_game.light.impl;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.github.oldnpluslusteam.old40_game.light.LightingSystem;
 import com.github.oldnpluslusteam.old40_game.light.Source;
@@ -25,7 +24,7 @@ public enum NullSurface implements Surface {
     }
 
     @Override
-    public void receiveLight(Source source, Vector2 point1, Vector2 point2) {
+    public void receiveLight(Source source, Vector2 point1, Vector2 point2, LightingSystem system) {
 
     }
 }

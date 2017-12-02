@@ -13,5 +13,5 @@ public interface Surface {
 
     float trace(Vector2 start, Vector2 dir, float max);
 
-    void receiveLight(Source source, Vector2 point1, Vector2 point2);
+    void receiveLight(Source source, Vector2 point1, Vector2 point2, LightingSystem system);
 }

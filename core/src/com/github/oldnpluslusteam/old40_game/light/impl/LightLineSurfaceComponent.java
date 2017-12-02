@@ -10,7 +10,7 @@ import com.github.oldnpluslusteam.old40_game.light.LightingSystem;
 import com.github.oldnpluslusteam.old40_game.light.Source;
 
 public class LightLineSurfaceComponent extends LineSurfaceComponent {
-    private final Vector2 focus;
+    private final Vector2 focus, absFocus = new Vector2();
     private final float maxdst;
 
     public LightLineSurfaceComponent(Vector2 point1, Vector2 point2, Vector2 focus, float maxdst) {
@@ -23,11 +23,13 @@ public class LightLineSurfaceComponent extends LineSurfaceComponent {
     public void preSolve(LightingSystem system) {
         super.preSolve(system);
 
+        absFocus.set(focus).rotate(rotation.get()).add(position.ref());
+
         Source source = system.addIterationSource(this);
 
         source.point1.set(abs1);
         source.point2.set(abs2);
-        source.focus.set(focus);
+        source.focus.set(absFocus);
         source.maxDist = maxdst;
     }
 

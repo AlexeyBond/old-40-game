@@ -2,8 +2,8 @@ package com.github.oldnpluslusteam.old40_game.light.impl;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Plane;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
@@ -44,7 +44,7 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
 
     @Override
     public void update(float deltaTime) {
-        Vector2 tmp1 = new Vector2();
+        Vector2 tmp1 = new Vector2(), tmp2 = new Vector2();
         iterationSources.clear();
         rays.clear();
 
@@ -117,15 +117,31 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
                         surface = cv.surface;
                     } else {
                         d = pv.surface.trace(source.focus, tmp1.set(cv.point).sub(source.focus), source.maxDist);
-                        tmp1.setLength(d).add(source.focus);
-                        source.setRayToPoints(ray, pv.point, tmp1);
-                        surface = pv.surface;
+                        if (d < source.maxDist && d > 0) {
+                            tmp1.setLength(d).add(source.focus);
+                            source.setRayToPoints(ray, pv.point, tmp1);
+                            surface = pv.surface;
+                        } else {
+                            trace(source.focus, tmp1.set(pv.point).add(cv.point).scl(0.5f).sub(source.focus),
+                                    source.minDistanceDirection(tmp1), source.maxDist, source.surface);
+                            surface = tr_surface;
+
+                            float dp = surface
+                                    .trace(source.focus, tmp1.set(pv.point).sub(source.focus), source.maxDist);
+                            float dc = surface
+                                    .trace(source.focus, tmp2.set(cv.point).sub(source.focus), source.maxDist);
+
+                            tmp1.setLength(dp).add(source.focus);
+                            tmp2.setLength(dc).add(source.focus);
+
+                            source.setRayToPoints(ray, tmp1, tmp2);
+                        }
                     }
                 }
 
                 if (!ray.isTooSmall()) {
                     rays.add(ray);
-                    surface.receiveLight(source, ray.points[3], ray.points[2]);
+                    surface.receiveLight(source, ray.points[3], ray.points[2], this);
                 }
 
                 pv = cv;
@@ -249,6 +265,10 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
 
         Color lightColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
 
+        Gdx.gl.glBlendFunc(GL20.GL_ONE, GL20.GL_ONE);
+        Gdx.gl.glBlendEquation(GL20.GL_FUNC_ADD);
+        Gdx.gl.glEnable(GL20.GL_BLEND);
+
         for (int i = 0; i < rays.size; i++) {
             Ray ray = rays.get(i);
 
@@ -265,6 +285,12 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
                     lightColor, lightColor, lightColor
             );
         }
+
+        shaper.flush();
+
+        Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+        Gdx.gl.glBlendEquation(GL20.GL_FUNC_ADD);
+        Gdx.gl.glDisable(GL20.GL_BLEND);
 
         for (int i = 0; i < traceVertices.size(); i++) {
             shaper.circle(traceVertices.get(i).point.x, traceVertices.get(i).point.y, i + 1);
