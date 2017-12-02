@@ -1,0 +1,58 @@
+{
+  "include": ["game-commons.json"],
+
+  "entities": [
+    {
+      "inherit": ["sourceProjector"],
+      "properties": {
+        "position": ["-200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-20", "-150"]
+      }
+    },
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-70", "-150"]
+      }
+    },
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["30", "-150"]
+      }
+    },
+
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-5", "-80"]
+      }
+    },
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["45", "-80"]
+      }
+    },
+
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-20", "0"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["200", "-160"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "include": ["game-commons.json"],
+
+  "entities": [
+    {
+      "inherit": ["sourceProjector"],
+      "properties": {
+        "position": ["-200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["mirrorCircle"],
+      "properties": {
+        "position": ["-20", "-150"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["-20", "100"],
+        "rotation": ["90"]
+      }
+    }
+  ]
+}

@@ -45,7 +45,8 @@
           "bodyType": "DynamicBody"
         },
         "circle fixture": {
-          "radius": 25
+          "radius": 25,
+          "friction": 1
         },
         "sprite": {
           "sprite": "sprites/mirrorsphere",
@@ -93,7 +94,8 @@
           "bodyType": "DynamicBody"
         },
         "box fixture": {
-          "size": [50, 50]
+          "size": [50, 50],
+          "friction": 1.0
         },
         "sprite": {
           "sprite": "sprites/blackbox",
