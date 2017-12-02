@@ -263,7 +263,7 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
     public void draw(DrawingContext context) {
         ShapeRenderer shaper = context.state().beginFilled();
 
-        Color lightColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        Color lightColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
 
         Gdx.gl.glBlendFunc(GL20.GL_ONE, GL20.GL_ONE);
         Gdx.gl.glBlendEquation(GL20.GL_FUNC_ADD);
@@ -295,6 +295,6 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
         for (int i = 0; i < traceVertices.size(); i++) {
             shaper.circle(traceVertices.get(i).point.x, traceVertices.get(i).point.y, i + 1);
         }
-        Gdx.graphics.setTitle("" + traceVertices.size());
+//        Gdx.graphics.setTitle("" + traceVertices.size());
     }
 }

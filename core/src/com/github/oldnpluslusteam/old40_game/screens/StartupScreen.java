@@ -14,6 +14,9 @@ import com.github.alexeybond.partly_solid_bicycle.game.declarative.GameDeclarati
 import com.github.alexeybond.partly_solid_bicycle.game.declarative.visitor.impl.ApplyGameDeclarationVisitor;
 import com.github.alexeybond.partly_solid_bicycle.game.systems.box2d_physics.PhysicsSystem;
 import com.github.alexeybond.partly_solid_bicycle.ioc.IoC;
+import com.github.alexeybond.partly_solid_bicycle.util.event.Event;
+import com.github.alexeybond.partly_solid_bicycle.util.event.EventListener;
+import com.github.alexeybond.partly_solid_bicycle.util.event.props.IntProperty;
 import com.github.alexeybond.partly_solid_bicycle.util.parts.AParts;
 import com.github.oldnpluslusteam.old40_game.light.impl.LightingSystemImpl;
 
@@ -54,5 +57,26 @@ public class StartupScreen extends DefaultScreen {
                 Gdx.files.internal("level0.json"));
 
         new ApplyGameDeclarationVisitor().doVisit(gameDeclaration, gameLayer.game());
+
+        final IntProperty wc = gameLayer.game().events().event("winCondition", IntProperty.make());
+        final IntProperty wd = gameLayer.game().events().event("winDone", IntProperty.make());
+
+        EventListener<IntProperty> winListener = new EventListener<IntProperty>() {
+            @Override
+            public boolean onTriggered(IntProperty event) {
+                Gdx.graphics.setTitle(""+wd.get()+"/"+wc.get()+" done");
+                if (wd.get() != 0 && wd.get() == wc.get()) {
+                    // win
+                } else {
+                    // no win
+                }
+                return false;
+            }
+        };
+
+        wc.subscribe(winListener);
+        wd.subscribe(winListener);
+
+        Gdx.gl.glClearColor(0.2f, 0.2f, 0.24f, 0.0f);
     }
 }

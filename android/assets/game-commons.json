@@ -1,0 +1,170 @@
+{
+  "classes": {
+    "camera": {
+      "components": {
+        "camera": {
+          "pass": "setup-main-camera",
+          "globalAlias": "mainCamera"
+        },
+        "tag": {
+          "tag": "camera"
+        }
+      },
+      "properties": {
+        "zoomFunction": ["fixed diagonal zoom function", "1300"],
+        "position": ["0", "0"]
+      }
+    },
+    "blackSquare": {
+      "components": {
+        "line1": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-10, -10, 10, -10]
+        },
+        "line2": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [10, -10, 10, 10]
+        },
+        "line3": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [10, 10, -10, 10]
+        },
+        "line4": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-10, 10, -10, -10]
+        }
+      }
+    },
+    "mirrorCircle": {
+      "components": {
+        "line": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.MirrorLineSurfaceComponent$Decl",
+          "points": [0, 20, 0, -20]
+        },
+        "body": {
+          "bodyType": "DynamicBody"
+        },
+        "circle fixture": {
+          "radius": 25
+        },
+        "sprite": {
+          "sprite": "sprites/mirrorsphere",
+          "scale": 0.4
+        }
+      }
+    },
+    "sourceProjector": {
+      "components": {
+        "line": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [15, -15, 15, 15],
+          "focus": [-15, 0],
+          "maxDst": 5000
+        },
+        "body": {"bodyType": "StaticBody"},
+        "box fixture": {
+          "size": [40, 40]
+        },
+        "sprite": {
+          "sprite": "sprites/lightsource",
+          "scale": 0.4
+        }
+      }
+    },
+    "blackBox": {
+      "components": {
+        "line1": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-18, -18, 18, -18]
+        },
+        "line2": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [18, -18, 18, 18]
+        },
+        "line3": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [18, 18, -18, 18]
+        },
+        "line4": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-18, 18, -18, -18]
+        },
+        "body": {
+          "bodyType": "DynamicBody"
+        },
+        "box fixture": {
+          "size": [50, 50]
+        },
+        "sprite": {
+          "sprite": "sprites/blackbox",
+          "scale": 0.4
+        }
+      }
+    },
+    "targetTrigger": {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/target",
+          "scale": 0.4
+        },
+        "trigger": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.TriggerLineSurface$Decl",
+          "points": [-15,-15,-15,15]
+        },
+        "body": {"bodyType": "StaticBody"},
+        "box fixture": {
+          "size": [40, 40]
+        },
+        "effect": {
+          "type": "particles",
+          "effect": "particles/effect1.p",
+          "offset": [0, 0],
+          "rotate": 0,
+          "masterProperty": "triggered",
+          "pass": "game-light"
+        }
+      }
+    }
+  },
+  "entities": [
+    {
+      "inherit": ["camera"],
+      "components": {
+        "physics debugger": {
+          "camera": "mainCamera"
+        },
+        "mouse joint": {
+          "tolerance": 10,
+          "frequency": 100000,
+          "damping": 0
+        }
+      }
+    },
+
+    {
+      "components": {
+        "body": { "bodyType": "StaticBody" },
+        "bottom": {
+          "type": "box fixture",
+          "size": [1000, 20],
+          "center": [0, -200]
+        },
+        "top": {
+          "type": "box fixture",
+          "size": [1000, 20],
+          "center": [0, 200]
+        },
+        "left": {
+          "type": "box fixture",
+          "size": [20, 1000],
+          "center": [-400, 0]
+        },
+        "right": {
+          "type": "box fixture",
+          "size": [10, 1000],
+          "center": [400, 0]
+        }
+      }
+    }
+  ]
+}

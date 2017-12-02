@@ -37,7 +37,7 @@ public class LightLineSurfaceComponent extends LineSurfaceComponent {
     public void draw(DrawingContext context) {
         super.draw(context);
 
-        context.state().beginLines().circle(focus.x, focus.y, 1);
+        context.state().beginLines().circle(absFocus.x, absFocus.y, 1);
     }
 
     public static class Decl implements ComponentDeclaration {

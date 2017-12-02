@@ -23,8 +23,8 @@ public class MirrorLineSurfaceComponent extends LineSurfaceComponent {
 
         reflection.focus.sub(tmp.scl(2f * tmp.dot(reflection.focus))).add(point1);
 
-        reflection.point1.set(point2);
-        reflection.point2.set(point1);
+        reflection.point1.set(point1);
+        reflection.point2.set(point2);
 
         reflection.surface = this;
         reflection.maxDist = source.maxDist;
