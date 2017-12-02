@@ -1,0 +1,66 @@
+{
+  "classes": {
+    "camera": {
+      "components": {
+        "camera": {
+          "pass": "setup-main-camera",
+          "globalAlias": "mainCamera"
+        },
+        "tag": {
+          "tag": "camera"
+        }
+      },
+      "properties": {
+        "zoomFunction": ["fixed diagonal zoom function", "2000"],
+        "position": ["0", "0"]
+      }
+    },
+    "blackSquare": {
+      "components": {
+        "line1": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-10, -10, 10, -10]
+        },
+        "line2": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [10, -10, 10, 10]
+        },
+        "line3": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [10, 10, -10, 10]
+        },
+        "line4": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
+          "points": [-10, 10, -10, -10]
+        }
+      }
+    }
+  },
+
+  "entities": [
+    {
+      "inherit": ["camera"]
+    },
+
+    {
+      "inherit": ["blackSquare"],
+      "components": {
+
+      },
+      "properties": {
+        "position": ["100", "100"],
+        "rotation": ["0"]
+      }
+    },
+
+    {
+      "components": {
+        "light": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [10, 10, -10, -10],
+          "focus": [20, -20]
+        }
+      }
+    }
+  ]
+}
