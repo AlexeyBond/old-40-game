@@ -134,6 +134,20 @@
           "tag": "next_pointer"
         }
       }
+    },
+    "dynamicThing": {
+      "components": {
+        "body": {
+          "bodyType": "DynamicBody"
+        }
+      }
+    },
+    "staticThing": {
+      "components": {
+        "body": {
+          "bodyType": "StaticBody"
+        }
+      }
     }
   },
   "entities": [

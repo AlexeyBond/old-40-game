@@ -1,0 +1,31 @@
+{
+  "include": ["game-commons.json"],
+
+  "entities": [
+    {
+      "inherit": ["dynamicThing", "sourceProjector"],
+      "properties": {
+        "position": ["-200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level7.json"]}
+    }
+  ]
+}

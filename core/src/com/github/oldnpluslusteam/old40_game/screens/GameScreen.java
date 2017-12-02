@@ -56,7 +56,7 @@ public class GameScreen extends DefaultScreen {
     protected void createLayers(AParts<Screen, Layer> layers) {
         super.createLayers(layers);
 
-        ScreenUtils.enableToggleDebug(this, true);
+        ScreenUtils.enableToggleDebug(this, false);
 
         GameLayer gameLayer = layers.add("game", new GameLayerWith2DPhysicalGame());
         StageLayer stageLayer = layers.add("ui", new StageLayer("ui-main"));

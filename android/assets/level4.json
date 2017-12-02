@@ -56,6 +56,11 @@
       "properties": {
         "position": ["100", "150"]
       }
+    },
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level5.json"]}
     }
   ]
 }

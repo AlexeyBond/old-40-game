@@ -1,0 +1,75 @@
+{
+  "include": ["game-commons.json"],
+
+  "entities": [
+    {
+      "inherit": ["sourceProjector"],
+      "properties": {
+        "position": ["-200", "-160"],
+        "rotation": ["90"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-20", "-109.5"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-59"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-9"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "41"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "91"]
+      }
+    },
+
+    {
+      "inherit": ["mirrorCircle"],
+      "properties": {
+        "position": ["-20", "141"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["200", "-160"],
+        "rotation": ["-90"]
+      }
+    }/*,
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level8.json"]}
+    }*/
+  ]
+}

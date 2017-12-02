@@ -1,0 +1,73 @@
+{
+  "include": ["game-commons.json"],
+
+  "entities": [
+    {
+      "inherit": ["dynamicThing", "sourceProjector"],
+      "properties": {
+        "position": ["-200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-110"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-60"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "-10"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "40"]
+      }
+    },
+
+    {
+      "inherit": ["blackBox"],
+      "properties": {
+        "position": ["-20", "90.5"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-20", "141"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["200", "-160"]
+      }
+    },
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level8.json"]}
+    }
+  ]
+}
