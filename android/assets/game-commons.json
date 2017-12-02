@@ -15,26 +15,6 @@
         "position": ["0", "0"]
       }
     },
-    "blackSquare": {
-      "components": {
-        "line1": {
-          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
-          "points": [-10, -10, 10, -10]
-        },
-        "line2": {
-          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
-          "points": [10, -10, 10, 10]
-        },
-        "line3": {
-          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
-          "points": [10, 10, -10, 10]
-        },
-        "line4": {
-          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LineSurfaceComponent$Decl",
-          "points": [-10, 10, -10, -10]
-        }
-      }
-    },
     "mirrorCircle": {
       "components": {
         "line": {
@@ -64,7 +44,7 @@
         },
         "body": {"bodyType": "StaticBody"},
         "box fixture": {
-          "size": [40, 40]
+          "size": [40, 44]
         },
         "sprite": {
           "sprite": "sprites/lightsource",
@@ -188,6 +168,40 @@
           "size": [10, 1000],
           "center": [400, 0]
         }
+      }
+    },
+
+    {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/wall1",
+          "scale": 0.4
+        }
+      },
+      "properties": {
+        "position": ["-288", "-215"]
+      }
+    },
+    {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/wall1",
+          "scale": 0.4
+        }
+      },
+      "properties": {
+        "position": ["19", "-215"]
+      }
+    },
+    {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/wall1",
+          "scale": 0.4
+        }
+      },
+      "properties": {
+        "position": ["326", "-215"]
       }
     }
   ]
