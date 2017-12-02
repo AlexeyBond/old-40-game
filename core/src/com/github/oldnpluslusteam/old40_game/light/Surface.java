@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public interface Surface {
     public interface VertexCallback {
-        void call(Vector2 vertex);
+        void call(Surface surface, Vector2 vertex);
     }
 
     void getVertices(VertexCallback callback);

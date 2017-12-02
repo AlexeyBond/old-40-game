@@ -45,7 +45,13 @@
     {
       "inherit": ["blackSquare"],
       "components": {
-
+        "body": {
+          "bodyType": "DynamicBody"
+        },
+        "box fixture": {
+          "size": [30, 30],
+          "density": 100
+        }
       },
       "properties": {
         "position": ["100", "100"],
@@ -58,7 +64,40 @@
         "light": {
           "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
           "points": [10, 10, -10, -10],
-          "focus": [20, -20]
+          "focus": [20, -20],
+          "maxDst": 1000
+        }
+      }
+    },
+
+    {
+      "components": {
+        "physics debugger": { "camera": "mainCamera" },
+        "mouse joint": {
+          "tolerance": 10,
+          "frequency": 100000,
+          "damping": 0
+        },
+        "body": { "bodyType": "StaticBody" },
+        "bottom": {
+          "type": "box fixture",
+          "size": [1000, 20],
+          "center": [0, -200]
+        },
+        "top": {
+          "type": "box fixture",
+          "size": [1000, 20],
+          "center": [0, 200]
+        },
+        "left": {
+          "type": "box fixture",
+          "size": [20, 1000],
+          "center": [-400, 0]
+        },
+        "right": {
+          "type": "box fixture",
+          "size": [10, 1000],
+          "center": [400, 0]
         }
       }
     }

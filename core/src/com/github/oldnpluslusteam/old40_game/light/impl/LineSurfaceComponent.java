@@ -22,6 +22,7 @@ public class LineSurfaceComponent implements Surface, Component, RenderComponent
     private FloatProperty rotation;
 
     protected Vector2 point1, point2, abs1 = new Vector2(), abs2 = new Vector2();
+    private Vector2 absfix0 = new Vector2(), absfix1 = new Vector2(), absfix2 = new Vector2();
 
     private static final Vector2 tmp1 = new Vector2(), tmp2 = new Vector2();
 
@@ -47,24 +48,28 @@ public class LineSurfaceComponent implements Surface, Component, RenderComponent
 
     @Override
     public void getVertices(VertexCallback callback) {
-        callback.call(abs1);
-        callback.call(abs2);
+        callback.call(this, abs1);
+        callback.call(this, abs2);
     }
 
     @Override
     public void preSolve(LightingSystem system) {
         abs1.set(point1).rotate(rotation.get()).add(position.ref());
         abs2.set(point2).rotate(rotation.get()).add(position.ref());
+
+        absfix0.set(abs1).sub(abs2).scl(0.1f);
+        absfix1.set(abs1).add(absfix0);
+        absfix2.set(abs2).sub(absfix0);
     }
 
     @Override
     public float trace(Vector2 start, Vector2 dir, float max) {
-        tmp1.set(dir).scl(max).add(start);
-        if (Intersector.intersectLines(abs1, abs2, start, tmp1, tmp2)) {
+        tmp1.set(dir).setLength(max).add(start);
+        if (Intersector.intersectSegments(absfix1, absfix2, start, tmp1, tmp2)) {
             return tmp2.sub(start).len();
         }
 
-        return max;
+        return -1;
     }
 
     @Override
