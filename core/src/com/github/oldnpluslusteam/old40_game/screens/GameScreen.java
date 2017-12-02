@@ -2,7 +2,9 @@ package com.github.oldnpluslusteam.old40_game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.github.alexeybond.partly_solid_bicycle.application.Layer;
 import com.github.alexeybond.partly_solid_bicycle.application.Screen;
 import com.github.alexeybond.partly_solid_bicycle.application.impl.DefaultScreen;
@@ -15,14 +17,23 @@ import com.github.alexeybond.partly_solid_bicycle.drawing.tech.EDSLTechnique;
 import com.github.alexeybond.partly_solid_bicycle.game.declarative.GameDeclaration;
 import com.github.alexeybond.partly_solid_bicycle.game.declarative.visitor.impl.ApplyGameDeclarationVisitor;
 import com.github.alexeybond.partly_solid_bicycle.game.systems.box2d_physics.PhysicsSystem;
+import com.github.alexeybond.partly_solid_bicycle.game.systems.tagging.TaggingSystem;
 import com.github.alexeybond.partly_solid_bicycle.ioc.IoC;
-import com.github.alexeybond.partly_solid_bicycle.util.event.Event;
 import com.github.alexeybond.partly_solid_bicycle.util.event.EventListener;
 import com.github.alexeybond.partly_solid_bicycle.util.event.props.IntProperty;
+import com.github.alexeybond.partly_solid_bicycle.util.event.props.ObjectProperty;
 import com.github.alexeybond.partly_solid_bicycle.util.parts.AParts;
 import com.github.oldnpluslusteam.old40_game.light.impl.LightingSystemImpl;
 
-public class StartupScreen extends DefaultScreen {
+public class GameScreen extends DefaultScreen {
+    public static String INITIAL_LEVEL = "level0.json";
+
+    private final String levelName;
+
+    public GameScreen(String levelName) {
+        this.levelName = levelName;
+    }
+
     @Override
     protected Technique createTechnique() {
         return new EDSLTechnique() {
@@ -59,7 +70,7 @@ public class StartupScreen extends DefaultScreen {
 
         GameDeclaration gameDeclaration = IoC.resolve(
                 "load game declaration",
-                Gdx.files.internal("level4.json"));
+                Gdx.files.internal(/*"level4.json"*/levelName));
 
         new ApplyGameDeclarationVisitor().doVisit(gameDeclaration, gameLayer.game());
 
@@ -69,7 +80,7 @@ public class StartupScreen extends DefaultScreen {
 
         final Label progressLabel = new Label("", skin);
         final ProgressBar progressBar = new ProgressBar(0, 1, 1, false, skin);
-        final Button button = new TextButton("Next", skin);
+        final TextButton button = new TextButton("Next", skin);
 
         button.setDisabled(true);
         button.setVisible(false);
@@ -111,5 +122,26 @@ public class StartupScreen extends DefaultScreen {
         wd.trigger();
 
         Gdx.gl.glClearColor(0.2f, 0.2f, 0.24f, 0.0f);
+
+        try {
+            final String nextLevel = gameLayer.game().systems().<TaggingSystem>get("tagging")
+                    .group("next_pointer").getOnly()
+                    .events().<ObjectProperty<String>>event("nextLevel").get();
+
+            button.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent event, Actor actor) {
+                    next(new GameScreen(nextLevel));
+                }
+            });
+        } catch (RuntimeException e) {
+            button.setText("Exit");
+            button.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent event, Actor actor) {
+                    Gdx.app.exit();
+                }
+            });
+        }
     }
 }

@@ -126,6 +126,14 @@
           "pass": "game-light"
         }
       }
+    },
+    "nextPointer": {
+      "components": {
+        "com.github.oldnpluslusteam.old40_game.etc.NextPointer$Decl": {},
+        "tag": {
+          "tag": "next_pointer"
+        }
+      }
     }
   },
   "entities": [

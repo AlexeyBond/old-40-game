@@ -42,6 +42,11 @@
         "position": ["-200", "80"],
         "rotation": ["135"]
       }
+    },
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level4.json"]}
     }
   ]
 }

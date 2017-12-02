@@ -292,9 +292,9 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
         Gdx.gl.glBlendEquation(GL20.GL_FUNC_ADD);
         Gdx.gl.glDisable(GL20.GL_BLEND);
 
-        for (int i = 0; i < traceVertices.size(); i++) {
-            shaper.circle(traceVertices.get(i).point.x, traceVertices.get(i).point.y, i + 1);
-        }
+//        for (int i = 0; i < traceVertices.size(); i++) {
+//            shaper.circle(traceVertices.get(i).point.x, traceVertices.get(i).point.y, i + 1);
+//        }
 //        Gdx.graphics.setTitle("" + traceVertices.size());
     }
 }
