@@ -1,6 +1,7 @@
 package com.github.oldnpluslusteam.old40_game.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
@@ -19,7 +20,9 @@ import com.github.alexeybond.partly_solid_bicycle.game.declarative.visitor.impl.
 import com.github.alexeybond.partly_solid_bicycle.game.systems.box2d_physics.PhysicsSystem;
 import com.github.alexeybond.partly_solid_bicycle.game.systems.tagging.TaggingSystem;
 import com.github.alexeybond.partly_solid_bicycle.ioc.IoC;
+import com.github.alexeybond.partly_solid_bicycle.util.event.Event;
 import com.github.alexeybond.partly_solid_bicycle.util.event.EventListener;
+import com.github.alexeybond.partly_solid_bicycle.util.event.props.BooleanProperty;
 import com.github.alexeybond.partly_solid_bicycle.util.event.props.IntProperty;
 import com.github.alexeybond.partly_solid_bicycle.util.event.props.ObjectProperty;
 import com.github.alexeybond.partly_solid_bicycle.util.parts.AParts;
@@ -143,5 +146,15 @@ public class GameScreen extends DefaultScreen {
                 }
             });
         }
+
+        input().keyEvent(Input.Keys.ESCAPE).subscribe(new EventListener<BooleanProperty>() {
+            @Override
+            public boolean onTriggered(BooleanProperty event) {
+                if (!event.get()) {
+                    Gdx.app.exit();
+                }
+                return false;
+            }
+        });
     }
 }

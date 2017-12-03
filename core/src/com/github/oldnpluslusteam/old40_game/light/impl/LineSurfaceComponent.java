@@ -57,7 +57,7 @@ public class LineSurfaceComponent implements Surface, Component, RenderComponent
         abs1.set(point1).rotate(rotation.get()).add(position.ref());
         abs2.set(point2).rotate(rotation.get()).add(position.ref());
 
-        absfix0.set(abs1).sub(abs2).scl(0.1f);
+        absfix0.set(abs1).sub(abs2).scl(0.0001f);
         absfix1.set(abs1).add(absfix0);
         absfix2.set(abs2).sub(absfix0);
     }

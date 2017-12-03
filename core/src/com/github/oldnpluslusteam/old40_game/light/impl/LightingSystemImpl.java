@@ -109,20 +109,27 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
                     source.setRayToPoints(ray, pv.point, cv.point);
                     surface = pv.surface;
                 } else {
-                    float d = cv.surface.trace(source.focus, tmp1.set(pv.point).sub(source.focus), source.maxDist);
-
-                    if (d < source.maxDist && d > 0) {
-                        tmp1.setLength(d).add(source.focus);
-                        source.setRayToPoints(ray, tmp1, cv.point);
-                        surface = cv.surface;
-                    } else {
-                        d = pv.surface.trace(source.focus, tmp1.set(cv.point).sub(source.focus), source.maxDist);
-                        if (d < source.maxDist && d > 0) {
-                            tmp1.setLength(d).add(source.focus);
-                            source.setRayToPoints(ray, pv.point, tmp1);
-                            surface = pv.surface;
-                        } else {
-                            trace(source.focus, tmp1.set(pv.point).add(cv.point).scl(0.5f).sub(source.focus),
+//                    float d = cv.surface.trace(source.focus, tmp1.set(pv.point).sub(source.focus), source.maxDist);
+//
+//                    if (d < source.maxDist && d > 0) {
+//                        tmp1.setLength(d).add(source.focus);
+//                        source.setRayToPoints(ray, tmp1, cv.point);
+//                        surface = cv.surface;
+//                    } else {
+//                        d = pv.surface.trace(source.focus, tmp1.set(cv.point).sub(source.focus), source.maxDist);
+//                        if (d < source.maxDist && d > 0) {
+//                            tmp1.setLength(d).add(source.focus);
+//                            source.setRayToPoints(ray, pv.point, tmp1);
+//                            surface = pv.surface;
+//                        } else {
+                            tmp1.set(pv.point).sub(source.focus);
+                            tmp2.set(cv.point).sub(source.focus);
+                            if (tmp1.len2() < tmp2.len2()) {
+                                tmp2.setLength2(tmp1.len2());
+                            } else {
+                                tmp1.setLength2(tmp2.len2());
+                            }
+                            trace(source.focus, tmp1.add(tmp2).scl(0.5f),
                                     source.minDistanceDirection(tmp1), source.maxDist, source.surface);
                             surface = tr_surface;
 
@@ -135,8 +142,8 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
                             tmp2.setLength(dc).add(source.focus);
 
                             source.setRayToPoints(ray, tmp1, tmp2);
-                        }
-                    }
+//                        }
+//                    }
                 }
 
                 if (!ray.isTooSmall()) {
