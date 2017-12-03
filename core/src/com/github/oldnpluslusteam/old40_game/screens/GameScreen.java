@@ -29,7 +29,7 @@ import com.github.alexeybond.partly_solid_bicycle.util.parts.AParts;
 import com.github.oldnpluslusteam.old40_game.light.impl.LightingSystemImpl;
 
 public class GameScreen extends DefaultScreen {
-    public static String INITIAL_LEVEL = "level0.json";
+    public static String INITIAL_LEVEL = "level9.json";
 
     private final String levelName;
 

@@ -7,7 +7,9 @@
         "body": {"bodyType": "DynamicBody"},
         "circle fixture": {
           "radius": 10,
-          "restitution": 1000
+          "restitution": 1000,
+          "friction": 1,
+          "density": 10
         },
         "sprite": {
           "sprite": "sprites/disco-boss",
