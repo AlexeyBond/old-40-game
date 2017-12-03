@@ -115,9 +115,9 @@ active: false
 active: false
 - Tint - 
 colorsCount: 3
-colors0: 0.95686275
+colors0: 1.0
 colors1: 1.0
-colors2: 0.99607843
+colors2: 1.0
 timelineCount: 1
 timeline0: 0.0
 - Transparency - 
@@ -128,13 +128,13 @@ highMax: 1.0
 relative: false
 scalingCount: 4
 scaling0: 0.0
-scaling1: 0.5614035
-scaling2: 0.75
+scaling1: 1.0
+scaling2: 1.0
 scaling3: 0.0
 timelineCount: 4
 timeline0: 0.0
-timeline1: 0.19863014
-timeline2: 0.8
+timeline1: 0.21232876
+timeline2: 0.9520548
 timeline3: 1.0
 - Options - 
 attached: true
@@ -144,4 +144,4 @@ additive: true
 behind: false
 premultipliedAlpha: false
 - Image Path -
-particle.png
+/D:/code/old-40-game/android/assets/particle.png

@@ -39,20 +39,7 @@ public class GameScreen extends DefaultScreen {
 
     @Override
     protected Technique createTechnique() {
-        return new EDSLTechnique() {
-            @Override
-            protected Runnable build() {
-                return seq(
-                        clearColor(),
-                        pass("setup-main-camera"),
-                        pass("game-background"),
-                        pass("game-light"),
-                        pass("game-objects"),
-                        pass("game-debug"),
-                        pass("ui-main")
-                );
-            }
-        };
+        return new GameScreenTechnique();
     }
 
     @Override

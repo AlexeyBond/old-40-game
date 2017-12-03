@@ -16,15 +16,15 @@ relative: false
 scalingCount: 5
 scaling0: 0.0
 scaling1: 0.0
-scaling2: 0.9411765
-scaling3: 0.8627451
+scaling2: 1.0
+scaling3: 1.0
 scaling4: 0.0
 timelineCount: 5
 timeline0: 0.0
 timeline1: 0.37571234
 timeline2: 0.37671232
-timeline3: 0.55479455
-timeline4: 0.6232877
+timeline3: 0.6222877
+timeline4: 0.9041096
 - Life - 
 lowMin: 0.0
 lowMax: 0.0
@@ -75,12 +75,12 @@ highMax: 8.0
 relative: false
 scalingCount: 3
 scaling0: 0.1764706
-scaling1: 0.43137255
-scaling2: 0.13725491
+scaling1: 0.78431374
+scaling2: 0.47058824
 timelineCount: 3
 timeline0: 0.0
-timeline1: 0.23287672
-timeline2: 0.9246575
+timeline1: 0.23972602
+timeline2: 0.89726025
 - Velocity - 
 active: true
 lowMin: 0.0
@@ -136,13 +136,13 @@ highMax: 1.0
 relative: false
 scalingCount: 4
 scaling0: 0.0
-scaling1: 0.5614035
-scaling2: 0.75
+scaling1: 1.0
+scaling2: 1.0
 scaling3: 0.0
 timelineCount: 4
 timeline0: 0.0
-timeline1: 0.19863014
-timeline2: 0.8
+timeline1: 0.24657534
+timeline2: 0.93835616
 timeline3: 1.0
 - Options - 
 attached: true
@@ -152,4 +152,4 @@ additive: true
 behind: false
 premultipliedAlpha: false
 - Image Path -
-/D:/code/old-40-game/android/assets/particle.png
+particle.png
