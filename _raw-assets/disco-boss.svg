@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458334"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="disco-boss.svg"
+   inkscape:export-filename="D:\code\old-40-game\android\assets\sprites\disco-boss.png"
+   inkscape:export-xdpi="122.88"
+   inkscape:export-ydpi="122.88"
+   inkscape:version="0.92.1 r15371">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4544">
+      <stop
+         style="stop-color:#ff0505;stop-opacity:1;"
+         offset="0"
+         id="stop4540" />
+      <stop
+         id="stop4552"
+         offset="0.21385919"
+         style="stop-color:#2dc2db;stop-opacity:0.54228854" />
+      <stop
+         id="stop4550"
+         offset="0.51254052"
+         style="stop-color:#ab66cc;stop-opacity:0.67843139" />
+      <stop
+         id="stop4548"
+         offset="0.70408612"
+         style="stop-color:#fa91ee;stop-opacity:0.74626863" />
+      <stop
+         style="stop-color:#84fffb;stop-opacity:0.48756218"
+         offset="1"
+         id="stop4542" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4544"
+       id="radialGradient4546"
+       cx="13.229166"
+       cy="283.77081"
+       fx="13.229166"
+       fy="283.77081"
+       r="13.097083"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="6.2225397"
+     inkscape:cx="29.31759"
+     inkscape:cy="59.736716"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4493" />
+    <sodipodi:guide
+       position="34.395833,34.395835"
+       orientation="-0.70710678,0.70710678"
+       id="guide4495"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,26.458333"
+       orientation="0.70710678,0.70710678"
+       id="guide4497"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-270.54165)">
+    <path
+       sodipodi:type="star"
+       style="fill:url(#radialGradient4546);fill-opacity:1;fill-rule:nonzero;stroke:#4affd3;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.51499999"
+       id="path4530"
+       sodipodi:sides="8"
+       sodipodi:cx="13.229166"
+       sodipodi:cy="283.77081"
+       sodipodi:r1="12.964584"
+       sodipodi:r2="5.953125"
+       sodipodi:arg1="2.8372568e-007"
+       sodipodi:arg2="0.39269937"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 26.19375,283.77082 -3.797241,9.16734 -9.167347,3.79724 -9.1673441,-3.79724 -3.79723622,-9.16735 3.79724142,-9.16735 9.1673469,-3.79723 9.167344,3.79724 z" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4554"
+       width="13.229167"
+       height="13.229181"
+       x="6.614583"
+       y="277.15622"
+       ry="6.6145835" />
+  </g>
+</svg>
