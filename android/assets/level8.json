@@ -65,11 +65,11 @@
         "position": ["200", "-160"],
         "rotation": ["-90"]
       }
-    }/*,
+    },
 
     {
       "inherit": ["nextPointer"],
-      "properties": {"nextLevel": ["level8.json"]}
-    }*/
+      "properties": {"nextLevel": ["level9.json"]}
+    }
   ]
 }

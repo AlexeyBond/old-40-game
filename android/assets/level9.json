@@ -1,0 +1,128 @@
+{
+  "include": ["game-commons.json"],
+
+  "classes": {
+    "boss": {
+      "components": {
+        "body": {"bodyType": "DynamicBody"},
+        "circle fixture": {
+          "radius": 10,
+          "restitution": 1000
+        },
+        "sprite": {
+          "sprite": "sprites/disco-boss",
+          "scale": 0.2
+        },
+        "line1": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [-3, -5, 3, -5],
+          "focus": [0,5],
+          "maxDst": 1000
+        },
+        "line2": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [5, -3, 5, 3],
+          "focus": [-5,0],
+          "maxDst": 1000
+        },
+        "line3": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [3, 5, -3, 5],
+          "focus": [0,-5],
+          "maxDst": 1000
+        },
+        "line4": {
+          "type": "com.github.oldnpluslusteam.old40_game.light.impl.LightLineSurfaceComponent$Decl",
+          "points": [-5, 3, -5, -3],
+          "focus": [5,0],
+          "maxDst": 1000
+        }
+      }
+    }
+  },
+
+  "entities": [
+
+    {
+      "inherit": ["boss"],
+      "properties": {
+        "position": ["0", "0"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["200", "-160"],
+        "rotation": ["-90"]
+      }
+    },
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["-200", "-160"],
+        "rotation": ["-90"]
+      }
+    },
+
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["240", "60"],
+        "rotation": ["90"]
+      }
+    },
+    {
+      "inherit": ["targetTrigger"],
+      "properties": {
+        "position": ["-240", "60"],
+        "rotation": ["90"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["0", "50"]
+      }
+    },
+    {
+      "inherit": ["mirrorCircle"],
+      "properties": {
+        "position": ["0", "100"]
+      }
+    },
+
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["180", "0"]
+      }
+    },
+    {
+      "inherit": ["staticThing", "blackBox"],
+      "properties": {
+        "position": ["-180", "0"]
+      }
+    },
+
+    {
+      "inherit": ["mirrorCircle"],
+      "properties": {
+        "position": ["180", "50"]
+      }
+    },
+    {
+      "inherit": ["mirrorCircle"],
+      "properties": {
+        "position": ["-180", "50"]
+      }
+    }
+    /*,
+
+    {
+      "inherit": ["nextPointer"],
+      "properties": {"nextLevel": ["level8.json"]}
+    }*/
+  ]
+}
