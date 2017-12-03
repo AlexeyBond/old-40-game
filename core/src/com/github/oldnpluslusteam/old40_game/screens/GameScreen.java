@@ -60,13 +60,13 @@ public class GameScreen extends DefaultScreen {
 
         GameDeclaration gameDeclaration = IoC.resolve(
                 "load game declaration",
-                Gdx.files.internal(/*"level4.json"*/levelName));
+                Gdx.files.internal(levelName));
 
         new ApplyGameDeclarationVisitor().doVisit(gameDeclaration, gameLayer.game());
 
         //
 
-        Skin skin = IoC.resolve("load skin", "skins/neon/neon-ui.json");
+        Skin skin = IoC.resolve("load skin", "ui/uiskin.json");
 
         final Label progressLabel = new Label("", skin);
         final ProgressBar progressBar = new ProgressBar(0, 1, 1, false, skin);
