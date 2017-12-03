@@ -97,12 +97,20 @@
         "box fixture": {
           "size": [40, 40]
         },
-        "effect": {
+        "effect1": {
           "type": "particles",
           "effect": "particles/effect1.p",
           "offset": [0, 0],
           "rotate": 0,
           "masterProperty": "triggered",
+          "pass": "game-light"
+        },
+        "effect2": {
+          "type": "particles",
+          "effect": "particles/effect2.p",
+          "offset": [0, 0],
+          "rotate": 0,
+          "masterProperty": "notTriggered",
           "pass": "game-light"
         }
       }

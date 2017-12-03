@@ -14,12 +14,13 @@ import com.github.oldnpluslusteam.old40_game.light.Source;
 
 public class TriggerLineSurface extends LineSurfaceComponent {
     private boolean triggering;
-    private BooleanProperty triggeringEvent;
+    private BooleanProperty triggeringEvent, notTriggeringEvent;
     private IntProperty winCondition, winDone;
 
     private Subscription<BooleanProperty> triggeredSub = new Subscription<BooleanProperty>() {
         @Override
         public boolean onTriggered(BooleanProperty event) {
+            notTriggeringEvent.set(!event.get());
             winDone.set(winDone.get() + (event.get() ? 1 : -1));
             return false;
         }
@@ -38,6 +39,7 @@ public class TriggerLineSurface extends LineSurfaceComponent {
         winCondition = entity.game().events().event("winCondition", IntProperty.make());
         winDone = entity.game().events().event("winDone", IntProperty.make());
         triggeringEvent = entity.events().event("triggered", BooleanProperty.make(false));
+        notTriggeringEvent = entity.events().event("notTriggered", BooleanProperty.make(true));
         triggeredSub.set(triggeringEvent);
 
         winCondition.set(winCondition.get() + 1);
