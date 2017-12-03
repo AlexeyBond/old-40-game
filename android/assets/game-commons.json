@@ -211,6 +211,30 @@
       "properties": {
         "position": ["326", "-215"]
       }
+    },
+    {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/wall1",
+          "scale": 0.4
+        }
+      },
+      "properties": {
+        "position": ["420", "0"],
+        "rotation": ["90"]
+      }
+    },
+    {
+      "components": {
+        "sprite": {
+          "sprite": "sprites/wall1",
+          "scale": 0.4
+        }
+      },
+      "properties": {
+        "position": ["-415", "0"],
+        "rotation": ["-90"]
+      }
     }
   ]
 }
