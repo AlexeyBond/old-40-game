@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable {
+    public static final float LIGHT_BRIGHTNESS = 0.1f;
+
     private final Array<Surface> surfaces = new Array<Surface>(false, 64);
     private final Queue<Source> iterationSources = new Queue<Source>(64);
     private final Array<Ray> rays = new Array<Ray>(64);
@@ -270,7 +272,7 @@ public class LightingSystemImpl implements LightingSystem, GameSystem, Drawable 
     public void draw(DrawingContext context) {
         ShapeRenderer shaper = context.state().beginFilled();
 
-        Color lightColor = new Color(0.1f, 0.1f, 0.1f, 0.1f);
+        Color lightColor = new Color(LIGHT_BRIGHTNESS, LIGHT_BRIGHTNESS, LIGHT_BRIGHTNESS, LIGHT_BRIGHTNESS);
 
         Gdx.gl.glBlendFunc(GL20.GL_ONE, GL20.GL_ONE);
         Gdx.gl.glBlendEquation(GL20.GL_FUNC_ADD);
